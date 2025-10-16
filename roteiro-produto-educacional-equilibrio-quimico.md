@@ -355,10 +355,10 @@ Os estudantes assumem o papel de jovens cientistas no **Reino dos Elementos**, u
 - **Área:** Ciências da Natureza - Química
 
 ### Créditos e Atribuições
-- **Autora:** Prof.ª Pâmella A. Balcaçar
+- **Autora:** [Prof.ª Pâmella A. Balcaçar](https://github.com/pamellabiotec/produto_educacional_cnmc/blob/main/sobre-criadora.md)
 - **Lattes:** http://lattes.cnpq.br/1206643836491711
 - **Contato:** @pamellabiotec
-- **Instituição:** [Nome da Instituição]
+- **Instituição:** Escola Estadual Pindorama/ UFMT.
 - **Ano:** 2025
 
 ### Recursos Utilizados

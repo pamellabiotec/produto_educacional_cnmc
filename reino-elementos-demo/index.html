@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino dos Elementos: Jornada pelo Equilíbrio Químico</title>
+    <style>
+        :root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  /* RGB versions for opacity control */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  /* Background color tokens (Light Mode) */
+  --color-bg-1: rgba(59, 130, 246, 0.08);
+  --color-bg-2: rgba(245, 158, 11, 0.08);
+  --color-bg-3: rgba(34, 197, 94, 0.08);
+  --color-bg-4: rgba(239, 68, 68, 0.08);
+  --color-bg-5: rgba(147, 51, 234, 0.08);
+  --color-bg-6: rgba(249, 115, 22, 0.08);
+  --color-bg-7: rgba(236, 72, 153, 0.08);
+  --color-bg-8: rgba(6, 182, 212, 0.08);
+
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  /* Common style patterns */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+
+  /* Typography */
+  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+
+  /* Custom game colors */
+  --game-gold: #FFD700;
+  --game-emerald: #50C878;
+  --game-sapphire: #0F52BA;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-400-rgb: 119, 124, 124;
+    --color-teal-300-rgb: 50, 184, 198;
+    --color-gray-300-rgb: 167, 169, 169;
+    --color-gray-200-rgb: 245, 245, 245;
+
+    --color-bg-1: rgba(29, 78, 216, 0.15);
+    --color-bg-2: rgba(180, 83, 9, 0.15);
+    --color-bg-3: rgba(21, 128, 61, 0.15);
+    --color-bg-4: rgba(185, 28, 28, 0.15);
+    --color-bg-5: rgba(107, 33, 168, 0.15);
+    --color-bg-6: rgba(194, 65, 12, 0.15);
+    --color-bg-7: rgba(190, 24, 93, 0.15);
+    --color-bg-8: rgba(8, 145, 178, 0.15);
+
+    --color-background: var(--color-charcoal-700);
+    --color-surface: var(--color-charcoal-800);
+    --color-text: var(--color-gray-200);
+    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+    --color-primary: var(--color-teal-300);
+    --color-primary-hover: var(--color-teal-400);
+    --color-primary-active: var(--color-teal-800);
+    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-error: var(--color-red-400);
+    --color-success: var(--color-teal-300);
+    --color-warning: var(--color-orange-400);
+    --color-info: var(--color-gray-300);
+    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+    --color-btn-primary-text: var(--color-slate-900);
+    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+    --focus-ring: 0 0 0 3px var(--color-focus-ring);
+    --focus-outline: 2px solid var(--color-primary);
+    --status-bg-opacity: 0.15;
+    --status-border-opacity: 0.25;
+
+    --color-success-rgb: var(--color-teal-300-rgb);
+    --color-error-rgb: var(--color-red-400-rgb);
+    --color-warning-rgb: var(--color-orange-400-rgb);
+    --color-info-rgb: var(--color-gray-300-rgb);
+  }
+}
+
+[data-color-scheme="dark"] {
+  --color-gray-400-rgb: 119, 124, 124;
+  --color-teal-300-rgb: 50, 184, 198;
+  --color-gray-300-rgb: 167, 169, 169;
+  --color-gray-200-rgb: 245, 245, 245;
+
+  --color-bg-1: rgba(29, 78, 216, 0.15);
+  --color-bg-2: rgba(180, 83, 9, 0.15);
+  --color-bg-3: rgba(21, 128, 61, 0.15);
+  --color-bg-4: rgba(185, 28, 28, 0.15);
+  --color-bg-5: rgba(107, 33, 168, 0.15);
+  --color-bg-6: rgba(194, 65, 12, 0.15);
+  --color-bg-7: rgba(190, 24, 93, 0.15);
+  --color-bg-8: rgba(8, 145, 178, 0.15);
+
+  --color-background: var(--color-charcoal-700);
+  --color-surface: var(--color-charcoal-800);
+  --color-text: var(--color-gray-200);
+  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+  --color-primary: var(--color-teal-300);
+  --color-primary-hover: var(--color-teal-400);
+  --color-primary-active: var(--color-teal-800);
+  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-error: var(--color-red-400);
+  --color-success: var(--color-teal-300);
+  --color-warning: var(--color-orange-400);
+  --color-info: var(--color-gray-300);
+  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+  --color-btn-primary-text: var(--color-slate-900);
+  --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+
+  --color-success-rgb: var(--color-teal-300-rgb);
+  --color-error-rgb: var(--color-red-400-rgb);
+  --color-warning-rgb: var(--color-orange-400-rgb);
+  --color-info-rgb: var(--color-gray-300-rgb);
+}
+
+[data-color-scheme="light"] {
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+
+  --color-success-rgb: var(--color-teal-500-rgb);
+  --color-error-rgb: var(--color-red-500-rgb);
+  --color-warning-rgb: var(--color-orange-500-rgb);
+  --color-info-rgb: var(--color-slate-500-rgb);
+}
+
+html {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  border: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  background: var(--color-secondary-hover);
+}
+
+.btn--lg {
+  padding: var(--space-12) var(--space-24);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-md);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Custom Game Styles */
+.game-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-bg-1) 0%, var(--color-bg-3) 50%, var(--color-bg-5) 100%);
+}
+
+.header-bar {
+  background: rgba(var(--color-slate-900-rgb), 0.95);
+  backdrop-filter: blur(10px);
+  padding: var(--space-12) var(--space-16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--color-teal-300);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.ion-counter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  background: var(--game-gold);
+  color: var(--color-slate-900);
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-bar {
+  width: 200px;
+  height: 8px;
+  background: rgba(var(--color-gray-400-rgb), 0.3);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-teal-500), var(--game-emerald));
+  border-radius: var(--radius-full);
+  transition: width var(--duration-normal) var(--ease-standard);
+}
+
+.page {
+  display: none;
+  min-height: calc(100vh - 60px);
+  padding: var(--space-24);
+}
+
+.page.active {
+  display: block;
+}
+
+.welcome-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-32) 0;
+}
+
+.main-title {
+  font-size: clamp(var(--font-size-3xl), 5vw, 48px);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-16);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-32);
+}
+
+.start-button {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-teal-400));
+  border: none;
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--font-size-xl);
+  border-radius: var(--radius-lg);
+  color: var(--color-btn-primary-text);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: var(--shadow-lg);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: var(--font-weight-bold);
+}
+
+.start-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(var(--color-teal-500-rgb), 0.3);
+}
+
+.territories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-24);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.territory-card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  border: 2px solid transparent;
+  transition: all var(--duration-normal) var(--ease-standard);
+  cursor: pointer;
+  min-height: 250px;
+}
+
+.territory-card.unlocked {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(var(--color-teal-500-rgb), 0.2);
+}
+
+.territory-card.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-secondary);
+}
+
+.territory-card:hover:not(.locked) {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.territory-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-16);
+  display: block;
+}
+
+.territory-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+.territory-desc {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-16);
+}
+
+.territory-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-12);
+  background: var(--game-gold);
+  color: var(--color-slate-900);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.badge.earned {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.badge.locked {
+  background: var(--color-secondary);
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.question-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin-bottom: var(--space-24);
+  box-shadow: var(--shadow-sm);
+}
+
+.question-text {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-16);
+  color: var(--color-text);
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.option-button {
+  padding: var(--space-12) var(--space-16);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-base);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  text-align: left;
+}
+
+.option-button:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-1);
+}
+
+.option-button.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+}
+
+.option-button.correct {
+  border-color: var(--color-success);
+  background: var(--color-success);
+  color: var(--color-btn-primary-text);
+}
+
+.option-button.incorrect {
+  border-color: var(--color-error);
+  background: var(--color-error);
+  color: var(--color-btn-primary-text);
+}
+
+.feedback {
+  margin-top: var(--space-16);
+  padding: var(--space-16);
+  border-radius: var(--radius-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.feedback.correct {
+  background: rgba(var(--color-success-rgb), 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(var(--color-success-rgb), 0.3);
+}
+
+.feedback.incorrect {
+  background: rgba(var(--color-error-rgb), 0.1);
+  color: var(--color-error);
+  border: 1px solid rgba(var(--color-error-rgb), 0.3);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+}
+
+.tool-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20);
+  border: 1px solid var(--color-card-border);
+  transition: all var(--duration-normal) var(--ease-standard);
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.calculator {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin-top: var(--space-16);
+  border: 1px solid var(--color-card-border);
+}
+
+.calculator-input {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+.calculator-input input {
+  flex: 1;
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.calculator-result {
+  padding: var(--space-16);
+  background: var(--color-bg-3);
+  border-radius: var(--radius-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+.glossary-grid {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.glossary-item {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  border-left: 4px solid var(--color-primary);
+}
+
+.glossary-term {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+.glossary-definition {
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+}
+
+.glossary-example {
+  font-family: var(--font-family-mono);
+  background: var(--color-secondary);
+  padding: var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.credits-section {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  text-align: center;
+  margin-top: var(--space-32);
+  border: 1px solid var(--color-card-border);
+}
+
+.accessibility-controls {
+  position: fixed;
+  top: 80px;
+  right: var(--space-16);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-card-border);
+  z-index: 200;
+  display: none;
+}
+
+.accessibility-controls.show {
+  display: block;
+}
+
+.font-size-controls {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.font-btn {
+  padding: var(--space-6) var(--space-12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.font-btn:hover {
+  background: var(--color-secondary);
+}
+
+.high-contrast {
+  filter: contrast(150%) brightness(110%);
+}
+
+/* Navigation */
+.nav-buttons {
+  display: flex;
+  gap: var(--space-12);
+  justify-content: center;
+  margin-top: var(--space-24);
+}
+
+.back-button {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.back-button:hover {
+  background: var(--color-secondary-hover);
+}
+
+.avatar-selection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-16);
+  margin: var(--space-24) 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar-option {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.avatar-option:hover {
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.avatar-option.selected {
+  border-color: var(--color-primary);
+  background: var(--color-bg-1);
+}
+
+.avatar-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-8);
+}
+
+.avatar-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.simulation-container {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin: var(--space-16) 0;
+  border: 1px solid var(--color-card-border);
+}
+
+.simulation-controls {
+  display: flex;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.simulation-result {
+  background: var(--color-bg-3);
+  border-radius: var(--radius-base);
+  padding: var(--space-16);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-16);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-16);
+  }
+  
+  .territories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .start-button {
+    padding: var(--space-12) var(--space-24);
+    font-size: var(--font-size-lg);
+  }
+  
+  .header-bar {
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .game-stats {
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .progress-bar {
+    width: 150px;
+  }
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
+}
+
+/* Additional animation classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header Bar -->
+        <header class="header-bar">
+            <div class="logo">
+                <span>⚗️</span>
+                <span>Reino dos Elementos</span>
+            </div>
+            
+            <div class="game-stats">
+                <div class="ion-counter">
+                    <span>⚛️</span>
+                    <span id="ionCount">0</span>
+                    <span>Íons</span>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <small>Progresso Geral</small>
+                </div>
+                
+                <button class="btn btn--secondary" onclick="toggleAccessibility()">
+                    ♿ Acessibilidade
+                </button>
+            </div>
+        </header>
+
+        <!-- Accessibility Controls -->
+        <div class="accessibility-controls" id="accessibilityPanel">
+            <h4>Controles de Acessibilidade</h4>
+            <div class="font-size-controls">
+                <button class="font-btn" onclick="changeFontSize(-1)">A-</button>
+                <button class="font-btn" onclick="changeFontSize(0)">A</button>
+                <button class="font-btn" onclick="changeFontSize(1)">A+</button>
+            </div>
+            <button class="btn btn--secondary" onclick="toggleHighContrast()">
+                Alto Contraste
+            </button>
+        </div>
+
+        <!-- Welcome Page -->
+        <div class="page active" id="welcomePage">
+            <div class="welcome-section fade-in">
+                <h1 class="main-title">⚗️ Reino dos Elementos</h1>
+                <h2 class="subtitle">Uma Jornada Épica pelo Equilíbrio Químico</h2>
+                <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--space-32);">
+                    2º Ano do Ensino Médio - 4º Bimestre
+                </p>
+                
+                <div style="max-width: 600px; margin: 0 auto var(--space-32); text-align: left;">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-16);">🎯 Sua Missão</h3>
+                    <p style="margin-bottom: var(--space-16);">Explore cinco territórios místicos e domine os segredos do equilíbrio químico. Colete <strong>íons</strong> (pontos), conquiste <strong>badges</strong> e torne-se o mestre supremo das reações!</p>
+                    
+                    <h4 style="color: var(--color-primary); margin-bottom: var(--space-12);">🏆 Sistema de Recompensas</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: var(--space-8);">⚛️ <strong>Íons:</strong> Moeda do jogo conquistada em atividades</li>
+                        <li style="margin-bottom: var(--space-8);">🏅 <strong>Badges:</strong> Conquistas especiais desbloqueadas</li>
+                        <li style="margin-bottom: var(--space-8);">📊 <strong>Progresso:</strong> Avance pelos territórios gradualmente</li>
+                        <li style="margin-bottom: var(--space-8);">🧙‍♂️ <strong>Avatar:</strong> Personalize sua jornada científica</li>
+                    </ul>
+                </div>
+                
+                <button class="start-button pulse" onclick="showAvatarSelection()">
+                    🚀 Iniciar Jornada
+                </button>
+            </div>
+            
+            <!-- Credits -->
+            <div class="credits-section">
+                <h4>Créditos</h4>
+                <p><strong>Prof.ª Pâmella A. Balcaçar</strong></p>
+                <p><a href="http://lattes.cnpq.br/1206643836491711" target="_blank">📄 Currículo Lattes</a></p>
+                <p>👩🏽‍💻 @pamellabiotec</p>
+                <p>📝 Licença: CC BY-NC-SA 4.0</p>
+                <p>🔬 Produto Educacional - Ensino de Química</p>
+                <p>Desenvolvido com ❤️ para a educação brasileira</p>
+            </div>
+        </div>
+
+        <!-- Avatar Selection Page -->
+        <div class="page" id="avatarPage">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="color: var(--color-primary); margin-bottom: var(--space-24);">🧙‍♂️ Escolha seu Avatar Científico</h2>
+                <p style="margin-bottom: var(--space-24); color: var(--color-text-secondary);">Selecione um personagem para representar você nesta jornada pelo conhecimento químico!</p>
+                
+                <div class="avatar-selection" id="avatarSelection">
+                    <div class="avatar-option" data-avatar="cientista" onclick="selectAvatar('cientista')">
+                        <div class="avatar-icon">🧑‍🔬</div>
+                        <div class="avatar-name">Cientista</div>
+                    </div>
+                    <div class="avatar-option" data-avatar="alquimista" onclick="selectAvatar('alquimista')">
+                        <div class="avatar-icon">🧙‍♂️</div>
+                        <div class="avatar-name">Alquimista</div>
+                    </div>
+                    <div class="avatar-option" data-avatar="explorador" onclick="selectAvatar('explorador')">
+                        <div class="avatar-icon">🧑‍🚀</div>
+                        <div class="avatar-name">Explorador</div>
+                    </div>
+                    <div class="avatar-option" data-avatar="inventor" onclick="selectAvatar('inventor')">
+                        <div class="avatar-icon">🧑‍💻</div>
+                        <div class="avatar-name">Inventor</div>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn back-button" onclick="showPage('welcomePage')">
+                        ← Voltar
+                    </button>
+                    <button class="btn btn--primary" id="continueBtn" onclick="showPage('mapPage')" disabled>
+                        Continuar →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Page -->
+        <div class="page" id="mapPage">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; color: var(--color-primary); margin-bottom: var(--space-32);">🗺️ Mapa dos Territórios</h2>
+                
+                <!-- Badges Display -->
+                <div style="text-align: center; margin-bottom: var(--space-32);">
+                    <h3 style="color: var(--color-text); margin-bottom: var(--space-16);">🏆 Suas Conquistas</h3>
+                    <div class="badges-container" id="badgesDisplay" style="justify-content: center;">
+                        <!-- Badges will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="territories-grid" id="territoriesGrid">
+                    <!-- Territories will be populated by JavaScript -->
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn back-button" onclick="showPage('avatarPage')">
+                        ← Voltar
+                    </button>
+                    <button class="btn btn--secondary" onclick="showPage('toolsPage')">
+                        🔧 Ferramentas
+                    </button>
+                    <button class="btn btn--secondary" onclick="showPage('glossaryPage')">
+                        📚 Glossário
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Territory Content Page -->
+        <div class="page" id="territoryPage">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div id="territoryContent">
+                    <!-- Territory content will be populated by JavaScript -->
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn back-button" onclick="showPage('mapPage')">
+                        ← Voltar ao Mapa
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Page -->
+        <div class="page" id="toolsPage">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h2 style="text-align: center; color: var(--color-primary); margin-bottom: var(--space-32);">🔧 Ferramentas Científicas</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card" onclick="showTool('phCalculator')">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-12);">🧪 Calculadora de pH</h3>
+                        <p>Calcule o pH de soluções ácidas e básicas rapidamente.</p>
+                    </div>
+                    
+                    <div class="tool-card" onclick="showTool('equilibriumSim')">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-12);">⚖️ Simulador de Equilíbrio</h3>
+                        <p>Visualize como perturbações afetam o equilíbrio químico.</p>
+                    </div>
+                    
+                    <div class="tool-card" onclick="showTool('constantConverter')">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-12);">🔄 Conversor Kc-Kp</h3>
+                        <p>Converta entre constantes de equilíbrio Kc e Kp.</p>
+                    </div>
+                    
+                    <div class="tool-card" onclick="window.open('https://phet.colorado.edu/sims/html/acid-base-solutions/latest/acid-base-solutions_pt_BR.html', '_blank')">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-12);">🌐 PhET: Ácidos e Bases</h3>
+                        <p>Simulação interativa externa sobre soluções ácidas e básicas.</p>
+                    </div>
+                </div>
+                
+                <div id="activeToolContainer">
+                    <!-- Active tool will be displayed here -->
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn back-button" onclick="showPage('mapPage')">
+                        ← Voltar ao Mapa
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glossary Page -->
+        <div class="page" id="glossaryPage">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="text-align: center; color: var(--color-primary); margin-bottom: var(--space-32);">📚 Glossário Científico</h2>
+                
+                <div class="glossary-grid" id="glossaryGrid">
+                    <!-- Glossary items will be populated by JavaScript -->
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="btn back-button" onclick="showPage('mapPage')">
+                        ← Voltar ao Mapa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game State Management
+        const gameState = {
+            ions: 0,
+            progress: 0,
+            unlockedTerritories: ['Terra dos Conceitos'],
+            earnedBadges: [],
+            selectedAvatar: null,
+            currentTerritory: null,
+            fontSize: 1,
+            highContrast: false
+        };
+
+        // Game Data
+        const territories = [
+            {
+                id: 'terra-conceitos',
+                name: 'Terra dos Conceitos',
+                icon: '🌍',
+                description: 'Descubra os fundamentos do equilíbrio químico',
+                concepts: [
+                    'Sistema em equilíbrio',
+                    'Estado dinâmico',
+                    'Equilíbrio homogêneo vs heterogêneo',
+                    'Características do equilíbrio'
+                ],
+                activities: [
+                    {
+                        type: 'Quiz',
+                        question: 'O que caracteriza um sistema em equilíbrio químico?',
+                        options: [
+                            'A reação parou completamente',
+                            'As velocidades das reações direta e inversa são iguais',
+                            'Não há mais produtos sendo formados',
+                            'Não há mais reagentes no sistema'
+                        ],
+                        correct: 1,
+                        ions: 15,
+                        feedback: 'Correto! No equilíbrio químico, as velocidades das reações direta e inversa são iguais, caracterizando um estado dinâmico.'
+                    }
+                ],
+                unlocked: true
+            },
+            {
+                id: 'vale-constantes',
+                name: 'Vale das Constantes',
+                icon: '📊',
+                description: 'Domine os cálculos de Kc e Kp',
+                concepts: [
+                    'Constante Kc',
+                    'Constante Kp',
+                    'Relação Kp = Kc(RT)^Δn',
+                    'Interpretação de K'
+                ],
+                activities: [
+                    {
+                        type: 'Calculator',
+                        problem: 'Para a reação: 2SO₂ + O₂ ⇌ 2SO₃',
+                        data: '[SO₂] = 0,1 M, [O₂] = 0,2 M, [SO₃] = 0,8 M',
+                        question: 'Calcule o valor de Kc:',
+                        answer: '80',
+                        ions: 25,
+                        feedback: 'Excelente! Kc = [SO₃]²/([SO₂]²[O₂]) = (0,8)²/((0,1)²(0,2)) = 0,64/0,002 = 320'
+                    }
+                ],
+                unlocked: false
+            },
+            {
+                id: 'montanhas-deslocamento',
+                name: 'Montanhas do Deslocamento',
+                icon: '⛰️',
+                description: 'Explore o Princípio de Le Chatelier',
+                concepts: [
+                    'Princípio de Le Chatelier',
+                    'Efeito da concentração',
+                    'Efeito da temperatura',
+                    'Efeito da pressão',
+                    'Processo de Haber-Bosch'
+                ],
+                activities: [
+                    {
+                        type: 'Simulation',
+                        scenario: 'Equilíbrio: N₂O₄(g) ⇌ 2NO₂(g) (ΔH > 0)',
+                        question: 'O que acontece quando aumentamos a temperatura?',
+                        options: [
+                            'Deslocamento para a esquerda (reagentes)',
+                            'Deslocamento para a direita (produtos)',
+                            'Não há deslocamento',
+                            'O equilíbrio é destruído'
+                        ],
+                        correct: 1,
+                        ions: 30,
+                        feedback: 'Correto! Como a reação é endotérmica (ΔH > 0), o aumento da temperatura favorece a formação de produtos.'
+                    }
+                ],
+                unlocked: false
+            },
+            {
+                id: 'oceano-ions',
+                name: 'Oceano dos Íons',
+                icon: '🌊',
+                description: 'Navegue pelos equilíbrios iônicos',
+                concepts: [
+                    'Ionização de ácidos e bases',
+                    'Constantes Ka e Kb',
+                    'Lei de diluição de Ostwald',
+                    'Efeito do íon comum'
+                ],
+                activities: [
+                    {
+                        type: 'Branching',
+                        scenario: 'Você precisa preparar uma solução tampão eficaz. Qual combinação escolher?',
+                        options: [
+                            'Ácido forte + base forte',
+                            'Ácido fraco + seu sal (base conjugada)',
+                            'Base forte + sal neutro',
+                            'Apenas um ácido fraco'
+                        ],
+                        correct: 1,
+                        ions: 35,
+                        feedback: 'Perfeito! Uma solução tampão eficaz é formada por um ácido fraco e sua base conjugada (sal).'
+                    }
+                ],
+                unlocked: false
+            },
+            {
+                id: 'castelo-ph',
+                name: 'Castelo do pH',
+                icon: '🏰',
+                description: 'Conquiste os segredos dos ácidos e bases',
+                concepts: [
+                    'Escala de pH',
+                    'Cálculo de pH e pOH',
+                    'Soluções tampão',
+                    'Hidrólise salina',
+                    'Indicadores'
+                ],
+                activities: [
+                    {
+                        type: 'pH_Calculator',
+                        problem: 'Calcule o pH de uma solução de HCl 0,01 M:',
+                        answer: '2',
+                        ions: 40,
+                        feedback: 'Excelente! pH = -log[H⁺] = -log(0,01) = -log(10⁻²) = 2'
+                    }
+                ],
+                unlocked: false
+            }
+        ];
+
+        const badges = [
+            {
+                id: 'explorador',
+                name: 'Explorador Químico',
+                icon: '🔍',
+                criterion: 'Complete a Terra dos Conceitos',
+                description: 'Você descobriu os fundamentos do equilíbrio!'
+            },
+            {
+                id: 'mestre',
+                name: 'Mestre do Equilíbrio',
+                icon: '⚖️',
+                criterion: 'Complete Vale das Constantes',
+                description: 'Você domina os cálculos de equilíbrio!'
+            },
+            {
+                id: 'alquimista',
+                name: 'Alquimista Digital',
+                icon: '🧙‍♂️',
+                criterion: 'Use todas as ferramentas digitais',
+                description: 'Você é expert em tecnologia educacional!'
+            },
+            {
+                id: 'guardiao',
+                name: 'Guardião das Reações',
+                icon: '🛡️',
+                criterion: 'Complete Montanhas do Deslocamento',
+                description: 'Você protege o equilíbrio das perturbações!'
+            },
+            {
+                id: 'sabio',
+                name: 'Sábio dos Íons',
+                icon: '🧬',
+                criterion: 'Complete Oceano dos Íons',
+                description: 'Você navega pelos mistérios iônicos!'
+            },
+            {
+                id: 'conquistador',
+                name: 'Conquistador do pH',
+                icon: '👑',
+                criterion: 'Complete todos os territórios',
+                description: 'Você é o mestre supremo do equilíbrio!'
+            }
+        ];
+
+        const glossary = [
+            {
+                term: 'Equilíbrio Químico',
+                definition: 'Estado dinâmico onde as velocidades das reações direta e inversa são iguais.',
+                example: 'N₂ + 3H₂ ⇌ 2NH₃'
+            },
+            {
+                term: 'Constante de Equilíbrio (Kc)',
+                definition: 'Relação entre concentrações de produtos e reagentes no equilíbrio.',
+                example: 'Kc = [produtos]/[reagentes]'
+            },
+            {
+                term: 'Princípio de Le Chatelier',
+                definition: 'Sistema em equilíbrio reage a perturbações tentando minimizar o efeito.',
+                example: 'Aplicado na otimização de processos industriais'
+            },
+            {
+                term: 'pH',
+                definition: 'Potencial hidrogeniônico, medida da acidez de uma solução.',
+                example: 'pH = -log[H⁺], escala de 0 (ácido) a 14 (básico)'
+            },
+            {
+                term: 'Constante de Ionização (Ka)',
+                definition: 'Medida da força de um ácido fraco em solução aquosa.',
+                example: 'Ka = [H⁺][A⁻]/[HA]'
+            },
+            {
+                term: 'Solução Tampão',
+                definition: 'Solução que resiste a mudanças de pH quando pequenas quantidades de ácido ou base são adicionadas.',
+                example: 'CH₃COOH + CH₃COONa'
+            }
+        ];
+
+        // Utility Functions
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add fade-in animation
+            document.getElementById(pageId).classList.add('fade-in');
+            setTimeout(() => {
+                document.getElementById(pageId).classList.remove('fade-in');
+            }, 600);
+        }
+
+        function updateIonCounter() {
+            document.getElementById('ionCount').textContent = gameState.ions;
+        }
+
+        function updateProgress() {
+            const totalTerritories = territories.length;
+            const completedTerritories = gameState.unlockedTerritories.length - 1; // Subtract 1 because first is unlocked by default
+            const progressPercent = (completedTerritories / totalTerritories) * 100;
+            
+            document.getElementById('progressFill').style.width = `${progressPercent}%`;
+            gameState.progress = progressPercent;
+        }
+
+        function awardIons(amount) {
+            gameState.ions += amount;
+            updateIonCounter();
+            
+            // Show ion gain animation
+            showNotification(`+${amount} íons coletados! ⚛️`, 'success');
+        }
+
+        function awardBadge(badgeId) {
+            if (!gameState.earnedBadges.includes(badgeId)) {
+                gameState.earnedBadges.push(badgeId);
+                const badge = badges.find(b => b.id === badgeId);
+                showNotification(`Badge conquistado: ${badge.icon} ${badge.name}!`, 'success');
+                updateBadgesDisplay();
+            }
+        }
+
+        function unlockTerritory(territoryName) {
+            if (!gameState.unlockedTerritories.includes(territoryName)) {
+                gameState.unlockedTerritories.push(territoryName);
+                showNotification(`Novo território desbloqueado: ${territoryName}! 🗺️`, 'success');
+                updateProgress();
+                renderTerritories();
+            }
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--color-${type === 'success' ? 'success' : 'info'});
+                color: var(--color-btn-primary-text);
+                padding: var(--space-12) var(--space-16);
+                border-radius: var(--radius-base);
+                box-shadow: var(--shadow-lg);
+                z-index: 1000;
+                animation: slideInRight 0.3s ease-out;
+                max-width: 300px;
+                font-weight: var(--font-weight-medium);
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease-in';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Add keyframe animations for notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Avatar Selection
+        function selectAvatar(avatarType) {
+            gameState.selectedAvatar = avatarType;
+            
+            // Update UI
+            document.querySelectorAll('.avatar-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-avatar="${avatarType}"]`).classList.add('selected');
+            
+            // Enable continue button
+            document.getElementById('continueBtn').disabled = false;
+        }
+
+        function showAvatarSelection() {
+            showPage('avatarPage');
+        }
+
+        // Badges Display
+        function updateBadgesDisplay() {
+            const container = document.getElementById('badgesDisplay');
+            container.innerHTML = '';
+            
+            badges.forEach(badge => {
+                const badgeElement = document.createElement('div');
+                badgeElement.className = `badge ${gameState.earnedBadges.includes(badge.id) ? 'earned' : 'locked'}`;
+                badgeElement.innerHTML = `
+                    <span>${badge.icon}</span>
+                    <span>${badge.name}</span>
+                `;
+                badgeElement.title = badge.description;
+                container.appendChild(badgeElement);
+            });
+        }
+
+        // Territory Management
+        function renderTerritories() {
+            const container = document.getElementById('territoriesGrid');
+            container.innerHTML = '';
+            
+            territories.forEach((territory, index) => {
+                const isUnlocked = gameState.unlockedTerritories.includes(territory.name);
+                const isCompleted = false; // You could track completion status
+                
+                const territoryElement = document.createElement('div');
+                territoryElement.className = `territory-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+                territoryElement.innerHTML = `
+                    <div class="territory-icon">${territory.icon}</div>
+                    <h3 class="territory-title">${territory.name}</h3>
+                    <p class="territory-desc">${territory.description}</p>
+                    <div class="territory-progress">
+                        <span>${isUnlocked ? '🔓 Desbloqueado' : '🔒 Bloqueado'}</span>
+                    </div>
+                `;
+                
+                if (isUnlocked) {
+                    territoryElement.onclick = () => showTerritory(territory);
+                }
+                
+                container.appendChild(territoryElement);
+            });
+        }
+
+        function showTerritory(territory) {
+            gameState.currentTerritory = territory;
+            
+            const content = document.getElementById('territoryContent');
+            content.innerHTML = `
+                <div class="fade-in">
+                    <h2 style="color: var(--color-primary); text-align: center; margin-bottom: var(--space-24);">
+                        ${territory.icon} ${territory.name}
+                    </h2>
+                    
+                    <div class="card" style="margin-bottom: var(--space-24);">
+                        <div style="padding: var(--space-24);">
+                            <h3 style="color: var(--color-primary); margin-bottom: var(--space-16);">📋 Conceitos Abordados</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                ${territory.concepts.map(concept => `
+                                    <li style="margin-bottom: var(--space-8); padding: var(--space-8); background: var(--color-bg-3); border-radius: var(--radius-sm);">
+                                        ✓ ${concept}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="padding: var(--space-24);">
+                            <h3 style="color: var(--color-primary); margin-bottom: var(--space-16);">🎯 Atividade Interativa</h3>
+                            <div id="activityContainer">
+                                ${renderActivity(territory.activities[0])}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            showPage('territoryPage');
+        }
+
+        function renderActivity(activity) {
+            if (activity.type === 'Quiz') {
+                return `
+                    <div class="question-card">
+                        <div class="question-text">${activity.question}</div>
+                        <div class="options-container">
+                            ${activity.options.map((option, index) => `
+                                <button class="option-button" onclick="selectOption(${index}, ${activity.correct}, '${activity.feedback}', ${activity.ions})">
+                                    ${option}
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div id="feedbackContainer"></div>
+                    </div>
+                `;
+            } else if (activity.type === 'Simulation') {
+                return `
+                    <div class="simulation-container">
+                        <h4>${activity.scenario}</h4>
+                        <div class="question-text">${activity.question}</div>
+                        <div class="options-container">
+                            ${activity.options.map((option, index) => `
+                                <button class="option-button" onclick="selectOption(${index}, ${activity.correct}, '${activity.feedback}', ${activity.ions})">
+                                    ${option}
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div id="feedbackContainer"></div>
+                    </div>
+                `;
+            } else if (activity.type === 'Calculator') {
+                return `
+                    <div class="calculator">
+                        <h4>${activity.problem}</h4>
+                        <p><strong>Dados:</strong> ${activity.data}</p>
+                        <p>${activity.question}</p>
+                        <div class="calculator-input">
+                            <input type="number" id="calculatorInput" placeholder="Digite sua resposta" step="0.01">
+                            <button class="btn btn--primary" onclick="checkCalculation('${activity.answer}', '${activity.feedback}', ${activity.ions})">
+                                Verificar
+                            </button>
+                        </div>
+                        <div id="calculatorResult"></div>
+                    </div>
+                `;
+            }
+        }
+
+        function selectOption(selectedIndex, correctIndex, feedback, ions) {
+            const buttons = document.querySelectorAll('.option-button');
+            const feedbackContainer = document.getElementById('feedbackContainer');
+            
+            // Disable all buttons
+            buttons.forEach(button => button.disabled = true);
+            
+            // Mark correct and incorrect answers
+            buttons[correctIndex].classList.add('correct');
+            if (selectedIndex !== correctIndex) {
+                buttons[selectedIndex].classList.add('incorrect');
+            }
+            
+            // Show feedback
+            const isCorrect = selectedIndex === correctIndex;
+            feedbackContainer.innerHTML = `
+                <div class="feedback ${isCorrect ? 'correct' : 'incorrect'}">
+                    ${isCorrect ? '✅' : '❌'} ${feedback}
+                </div>
+            `;
+            
+            // Award ions if correct
+            if (isCorrect) {
+                awardIons(ions);
+                
+                // Check for territory completion and badge awards
+                setTimeout(() => {
+                    checkTerritoryCompletion();
+                }, 1000);
+            }
+        }
+
+        function checkCalculation(correctAnswer, feedback, ions) {
+            const input = document.getElementById('calculatorInput');
+            const result = document.getElementById('calculatorResult');
+            const userAnswer = parseFloat(input.value);
+            const correct = parseFloat(correctAnswer);
+            
+            const isCorrect = Math.abs(userAnswer - correct) < 0.1; // Allow small tolerance
+            
+            result.innerHTML = `
+                <div class="calculator-result">
+                    <div class="feedback ${isCorrect ? 'correct' : 'incorrect'}">
+                        ${isCorrect ? '✅' : '❌'} ${feedback}
+                    </div>
+                </div>
+            `;
+            
+            if (isCorrect) {
+                awardIons(ions);
+                setTimeout(() => {
+                    checkTerritoryCompletion();
+                }, 1000);
+            }
+        }
+
+        function checkTerritoryCompletion() {
+            const currentTerritory = gameState.currentTerritory;
+            if (!currentTerritory) return;
+            
+            // Award territory-specific badges
+            switch (currentTerritory.id) {
+                case 'terra-conceitos':
+                    awardBadge('explorador');
+                    unlockTerritory('Vale das Constantes');
+                    break;
+                case 'vale-constantes':
+                    awardBadge('mestre');
+                    unlockTerritory('Montanhas do Deslocamento');
+                    break;
+                case 'montanhas-deslocamento':
+                    awardBadge('guardiao');
+                    unlockTerritory('Oceano dos Íons');
+                    break;
+                case 'oceano-ions':
+                    awardBadge('sabio');
+                    unlockTerritory('Castelo do pH');
+                    break;
+                case 'castelo-ph':
+                    awardBadge('conquistador');
+                    break;
+            }
+        }
+
+        // Tools
+        function showTool(toolType) {
+            const container = document.getElementById('activeToolContainer');
+            
+            if (toolType === 'phCalculator') {
+                container.innerHTML = `
+                    <div class="calculator">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-16);">🧪 Calculadora de pH</h3>
+                        <div class="calculator-input">
+                            <input type="number" id="concentrationInput" placeholder="Concentração (M)" step="0.001">
+                            <select id="solutionType">
+                                <option value="acid">Ácido Forte</option>
+                                <option value="base">Base Forte</option>
+                            </select>
+                            <button class="btn btn--primary" onclick="calculatePH()">
+                                Calcular
+                            </button>
+                        </div>
+                        <div id="phResult"></div>
+                    </div>
+                `;
+            } else if (toolType === 'equilibriumSim') {
+                container.innerHTML = `
+                    <div class="simulation-container">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-16);">⚖️ Simulador de Equilíbrio</h3>
+                        <p>Reação: A + B ⇌ C + D</p>
+                        <div class="simulation-controls">
+                            <button class="btn btn--secondary" onclick="simulateEffect('concentration+')">
+                                + Concentração A
+                            </button>
+                            <button class="btn btn--secondary" onclick="simulateEffect('concentration-')">
+                                - Concentração A
+                            </button>
+                            <button class="btn btn--secondary" onclick="simulateEffect('temperature+')">
+                                + Temperatura
+                            </button>
+                            <button class="btn btn--secondary" onclick="simulateEffect('pressure+')">
+                                + Pressão
+                            </button>
+                        </div>
+                        <div id="simulationResult" class="simulation-result">
+                            Selecione uma perturbação para ver o efeito no equilíbrio
+                        </div>
+                    </div>
+                `;
+            } else if (toolType === 'constantConverter') {
+                container.innerHTML = `
+                    <div class="calculator">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-16);">🔄 Conversor Kc-Kp</h3>
+                        <div class="calculator-input">
+                            <input type="number" id="kcInput" placeholder="Valor de Kc" step="0.001">
+                            <input type="number" id="temperatureInput" placeholder="Temperatura (K)" step="1">
+                            <input type="number" id="deltaNInput" placeholder="Δn (mols gasosos)" step="1">
+                            <button class="btn btn--primary" onclick="convertKcKp()">
+                                Converter
+                            </button>
+                        </div>
+                        <div id="conversionResult"></div>
+                    </div>
+                `;
+            }
+        }
+
+        function calculatePH() {
+            const concentration = parseFloat(document.getElementById('concentrationInput').value);
+            const type = document.getElementById('solutionType').value;
+            const resultDiv = document.getElementById('phResult');
+            
+            if (concentration <= 0) {
+                resultDiv.innerHTML = '<div class="feedback incorrect">❌ Concentração deve ser positiva</div>';
+                return;
+            }
+            
+            let ph, poh;
+            if (type === 'acid') {
+                ph = -Math.log10(concentration);
+                poh = 14 - ph;
+            } else {
+                poh = -Math.log10(concentration);
+                ph = 14 - poh;
+            }
+            
+            resultDiv.innerHTML = `
+                <div class="calculator-result">
+                    <h4>Resultado:</h4>
+                    <p><strong>pH:</strong> ${ph.toFixed(2)}</p>
+                    <p><strong>pOH:</strong> ${poh.toFixed(2)}</p>
+                    <p><strong>Tipo:</strong> ${ph < 7 ? 'Ácida' : ph > 7 ? 'Básica' : 'Neutra'}</p>
+                </div>
+            `;
+            
+            // Award ions for using tool
+            awardIons(5);
+        }
+
+        function simulateEffect(effect) {
+            const resultDiv = document.getElementById('simulationResult');
+            let message = '';
+            
+            switch (effect) {
+                case 'concentration+':
+                    message = '➡️ Aumento de [A]: Equilíbrio desloca para a direita (produtos)';
+                    break;
+                case 'concentration-':
+                    message = '⬅️ Diminuição de [A]: Equilíbrio desloca para a esquerda (reagentes)';
+                    break;
+                case 'temperature+':
+                    message = '🌡️ Aumento de temperatura: Depende se a reação é endo ou exotérmica';
+                    break;
+                case 'pressure+':
+                    message = '📈 Aumento de pressão: Equilíbrio desloca para o lado com menor número de mols gasosos';
+                    break;
+            }
+            
+            resultDiv.innerHTML = message;
+            awardIons(3);
+        }
+
+        function convertKcKp() {
+            const kc = parseFloat(document.getElementById('kcInput').value);
+            const temp = parseFloat(document.getElementById('temperatureInput').value);
+            const deltaN = parseFloat(document.getElementById('deltaNInput').value);
+            const resultDiv = document.getElementById('conversionResult');
+            
+            if (!kc || !temp || isNaN(deltaN)) {
+                resultDiv.innerHTML = '<div class="feedback incorrect">❌ Preencha todos os campos</div>';
+                return;
+            }
+            
+            const R = 0.08206; // L·atm/(mol·K)
+            const kp = kc * Math.pow(R * temp, deltaN);
+            
+            resultDiv.innerHTML = `
+                <div class="calculator-result">
+                    <h4>Resultado:</h4>
+                    <p><strong>Kp:</strong> ${kp.toExponential(3)}</p>
+                    <p><strong>Fórmula:</strong> Kp = Kc × (RT)^Δn</p>
+                    <p><strong>Onde:</strong> R = 0,08206 L·atm/(mol·K)</p>
+                </div>
+            `;
+            
+            awardIons(8);
+        }
+
+        // Glossary
+        function renderGlossary() {
+            const container = document.getElementById('glossaryGrid');
+            container.innerHTML = '';
+            
+            glossary.forEach(item => {
+                const glossaryElement = document.createElement('div');
+                glossaryElement.className = 'glossary-item';
+                glossaryElement.innerHTML = `
+                    <div class="glossary-term">${item.term}</div>
+                    <div class="glossary-definition">${item.definition}</div>
+                    <div class="glossary-example">${item.example}</div>
+                `;
+                container.appendChild(glossaryElement);
+            });
+        }
+
+        // Accessibility
+        function toggleAccessibility() {
+            const panel = document.getElementById('accessibilityPanel');
+            panel.classList.toggle('show');
+        }
+
+        function changeFontSize(change) {
+            if (change === 0) {
+                gameState.fontSize = 1;
+            } else {
+                gameState.fontSize += change * 0.1;
+                gameState.fontSize = Math.max(0.8, Math.min(1.4, gameState.fontSize));
+            }
+            
+            document.documentElement.style.fontSize = `${14 * gameState.fontSize}px`;
+        }
+
+        function toggleHighContrast() {
+            gameState.highContrast = !gameState.highContrast;
+            document.body.classList.toggle('high-contrast', gameState.highContrast);
+        }
+
+        // Initialize Game
+        function initializeGame() {
+            updateIonCounter();
+            updateProgress();
+            updateBadgesDisplay();
+            renderTerritories();
+            renderGlossary();
+            
+            // Welcome message
+            setTimeout(() => {
+                showNotification('Bem-vindo ao Reino dos Elementos! 🎉', 'success');
+            }, 1000);
+        }
+
+        // Start the game when page loads
+        document.addEventListener('DOMContentLoaded', initializeGame);
+    </script>
+</body>
+</html>
